@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 
 const styles = {
   container: {
-    align: "center",
-    marginTop: "25px"
+    align: 'center'
   }
 }
 

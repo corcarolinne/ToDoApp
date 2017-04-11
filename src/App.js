@@ -8,6 +8,7 @@ import './App.css';
 const styles = {
   addContainer: {
     marginTop: "30px",
+    marginBottom:"20px",
     addButton: {
       marginLeft: "7px"
     }
@@ -23,12 +24,12 @@ class App extends Component {
           <h2>To Do App</h2>
         </div>
         <div style={styles.addContainer}>
-          <input type="text"/>
-          <button style={styles.addContainer.addButton} type="button"/>
-          <List>
-            <TaskRow/>
-          </List>
+          <input type="text" placeholder="Type your task!"/>
+          <button style={styles.addContainer.addButton} type="button">Add</button>
         </div>
+        <List>
+        <TaskRow/>
+        </List>
       </div>
     );
   }

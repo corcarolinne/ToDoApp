@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const styles = {
   container: {
     buttonsContainer: {
@@ -14,8 +13,8 @@ class TaskRow extends Component {
     return (
       <div>
         task1
-        <button style={styles.container.buttonsContainer} type="button"/>
-        <button type="button"/>
+        <button style={styles.container.buttonsContainer} type="button">Edit</button>
+        <button type="button">Delete</button>
       </div>
     );
   }
