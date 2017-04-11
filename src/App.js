@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import  List from './components/presentional/list';
+
 
 class App extends Component {
   render() {
@@ -10,9 +12,12 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>To Do App</h2>
         </div>
-        <p className="App-intro">
-          Hello World
-        </p>
+        <div className="App-intro">
+          <input type="text"/>
+          <button type="button"/>
+          <List>
+          </List>
+        </div>
       </div>
     );
   }
