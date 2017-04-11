@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
+import TaskRow from './components/presentional/taskRow';
+import List from './components/presentional/list';
 import logo from './logo.svg';
 import './App.css';
-import  List from './components/presentional/list';
 
+
+const styles = {
+  addContainer: {
+    marginTop: "30px",
+    addButton: {
+      marginLeft: "7px"
+    }
+  }
+}
 
 class App extends Component {
   render() {
@@ -12,10 +22,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>To Do App</h2>
         </div>
-        <div className="App-intro">
+        <div style={styles.addContainer}>
           <input type="text"/>
-          <button type="button"/>
+          <button style={styles.addContainer.addButton} type="button"/>
           <List>
+            <TaskRow/>
           </List>
         </div>
       </div>
