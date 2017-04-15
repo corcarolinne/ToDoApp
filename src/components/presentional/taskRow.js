@@ -10,12 +10,34 @@ const styles = {
 
 class TaskRow extends Component {
   render() {
-    const { task, editButtonLabel, deleteButtonLabel } = this.props;
+    const {
+      task,
+      editButtonLabel,
+      deleteButtonLabel,
+      deleteButtonOnClick,
+      isEditing,
+      editInputRef,
+      editButtonOnClick,
+      saveButtonLabel,
+      saveButtonOnClick
+     } = this.props;
     return (
       <div>
-        {task}
-        <button style={styles.container.buttonsContainer} type="button">{editButtonLabel}</button>
-        <button type="button">{deleteButtonLabel}</button>
+        {
+          isEditing ?
+          <input type="text" ref={editInputRef} />
+          :
+          task
+        }
+
+        {
+          isEditing ?
+          <button type="button" onClick={saveButtonOnClick}>{saveButtonLabel}</button>
+          :
+          <button type="button" onClick={editButtonOnClick}>{editButtonLabel}</button>
+        }
+
+        <button type="button" onClick={deleteButtonOnClick}>{deleteButtonLabel}</button>
       </div>
     );
   }

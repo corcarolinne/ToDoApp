@@ -9,9 +9,10 @@ const styles = {
 
 class List extends Component {
   render() {
+    const { children } = this.props;
     return (
       <div style={styles.container}>
-        {this.props.children}
+        {children}
       </div>
     );
   }
