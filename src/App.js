@@ -16,6 +16,32 @@ const styles = {
 }
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      taskList: []
+    };
+    this.addTaskRow = this.addTaskRow.bind(this);
+  };
+
+  buildRows() {
+    return this.state.taskList.map(item => (
+      <TaskRow
+        task={item}
+        editButtonLabel="Edit" deleteButtonLabel="Delete"
+      />
+    ));
+  }
+
+  addTaskRow() {
+  if (this.taskInput.value) {
+    this.state.taskList.push(this.taskInput.value);
+    this.taskInput.value = '';
+    this.setState(this.state);
+  }
+}
+
   render() {
     return (
       <div className="App">
@@ -24,11 +50,11 @@ class App extends Component {
           <h2>To Do App</h2>
         </div>
         <div style={styles.addContainer}>
-          <input type="text" placeholder="Type your task!"/>
-          <button style={styles.addContainer.addButton} type="button">Add</button>
+          <input type="text" ref={(input) => {this.taskInput = input}} placeholder="Type your task!"/>
+          <button style={styles.addContainer.addButton} type="button" onClick={this.addTaskRow}>Add</button>
         </div>
         <List>
-        <TaskRow/>
+        {this.buildRows()}
         </List>
       </div>
     );

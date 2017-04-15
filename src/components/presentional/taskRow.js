@@ -10,11 +10,12 @@ const styles = {
 
 class TaskRow extends Component {
   render() {
+    const { task, editButtonLabel, deleteButtonLabel } = this.props;
     return (
       <div>
-        task1
-        <button style={styles.container.buttonsContainer} type="button">Edit</button>
-        <button type="button">Delete</button>
+        {task}
+        <button style={styles.container.buttonsContainer} type="button">{editButtonLabel}</button>
+        <button type="button">{deleteButtonLabel}</button>
       </div>
     );
   }
