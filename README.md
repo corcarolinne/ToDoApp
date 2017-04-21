@@ -1,4 +1,4 @@
 # ToDoApp
-This is a CRUD application that consists in a List of Tasks. <br>
+This is a CRUD application that consists in a list of tasks. <br>
 I did it to learn more about React.
 
